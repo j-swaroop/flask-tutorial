@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row mt-5 d-flex flex-column justify-content-center align-items-center">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p> {{msg}}</p>
+                    
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+            <form action="#" method="post" class=" "> 
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" name="name"
+                        placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" name="password"
+                        placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <button type="submit" class="btn btn-dark btn-sm w-100 mt-4"> 
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+      
+
+{% endblock %}
